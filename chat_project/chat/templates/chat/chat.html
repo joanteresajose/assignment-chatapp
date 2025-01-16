@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <h1>Welcome, {{ user.username }}</h1>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="container">
+        <!-- Collapsible Left Menu -->
+        <div class="left-menu" id="leftMenu">
+            <button id="toggleMenu" class="toggle-btn">Collapse</button>
+            <h2>Registered Users</h2>
+            <ul>
+                {% for user in users %}
+                    <li><a href="#">{{ user.username }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <h2>Main Content</h2>
+            <p>This is the main content area.</p>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 My Website</p>
+    </footer>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
